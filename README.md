@@ -18,6 +18,7 @@ In the wise words of @alectrocute:
 	- [x] Password Hashing 
 - [x] Form Handling
 - [x] Dashboard
+- [ ] GitHub Workflows
 - [ ] Admin Pages
 - [ ] Role Support
 - [ ] Team Management
@@ -34,3 +35,4 @@ In the wise words of @alectrocute:
 - Billing Handling
 	- [ ] Stripe
 - [ ] GDPR Compliance / Data Export
+- [ ] Docker Images
