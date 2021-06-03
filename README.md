@@ -9,14 +9,15 @@ In the wise words of @alectrocute:
 - [ ] Landing Page
 - [ ] Database Management
 - Authentication
-	- [ ] Sign Up
-	- [ ] Sign In
+	- [x] Sign Up
+	- [x] Sign In
 	- [ ] OAuth2
 	- [ ] LDAP
 	- [ ] Forgot Password
-	- [ ] Password Hashing 
+	- [ ] Confirm Email
+	- [x] Password Hashing 
 - [x] Form Handling
-- [ ] Dashboard
+- [x] Dashboard
 - [ ] Admin Pages
 - [ ] Role Support
 - [ ] Team Management
