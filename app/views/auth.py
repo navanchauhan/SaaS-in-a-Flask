@@ -25,7 +25,7 @@ def register_user():
     flash_errors(form)
     return render_template("auth/signup.html",form=form)
 
-@app.route("/login", methods=['GET', 'POST'])
+@app.route("/signin", methods=['GET', 'POST'])
 def signin_user():
     form = UserLogIn()
     if form.validate_on_submit():
