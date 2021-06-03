@@ -3,6 +3,7 @@ from app.forms.app_forms import UserSignUp, UserLogIn
 from flask import render_template, flash,url_for, redirect
 from app.misc_func import flash_errors
 import flask_login
+from sqlalchemy.exc import IntegrityError
 
 
 @app.route("/signup", methods=['GET', 'POST'])
@@ -17,7 +18,10 @@ def register_user():
             password=form.password.data,
             )
         db.session.add(user)
-        db.session.commit() 
+        try:
+            db.session.commit()
+        except IntegrityError:
+            flash("Oops! An account with that email already exists") 
     flash_errors(form)
     return render_template("auth/signup.html",form=form)
 
@@ -30,10 +34,20 @@ def signin_user():
             if user.check_password(form.password.data):
                 flask_login.login_user(user)
                 return redirect(url_for("user_dashboard"))
-    flash_errors(form)
+            else:
+                flash("Incorrect Password")
+        else:
+            flash("Incorrect Email")
+    else:
+        flash_errors(form)
     return render_template("auth/signin.html",form=form) 
 
 @flask_login.login_required
 @app.route("/dashboard")
 def user_dashboard():
     return render_template("dashboard.html",user=flask_login.current_user)
+
+@app.route('/logout')
+def logout():
+    flask_login.logout_user()
+    return 'Logged out'
