@@ -4,6 +4,12 @@ In the wise words of @alectrocute:
 
 > I've noticed SaaS bootstraps/boilerplates being sold upwards of $1,000 per year and I think that's fucking ridiculous.
 
+## Development
+
+### Generating requirements.txt for GitHub Actions
+
+`pipenv lock --dev -r > requirements.txt`
+
 ## Features
 
 - [x] Landing Page
