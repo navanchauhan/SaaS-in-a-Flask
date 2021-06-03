@@ -22,14 +22,15 @@ jobs:
         python-version: ${{ matrix.python-version }}
 
     - name: Install Dependencies
-      run: |
-        curl -L https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer | bash
-        pipenv install --dev
-        pipenv install pytest-cov 
+      uses: VaultVulp/action-pipenv@v2.0.1 
+      with:
+        command: install --dev
         
     - name: Generate Coverage Report
-      run: |
-        pipenv run pytest --cov=./ --cov-report=xml
+      uses: VaultVulp/action-pipenv@v2.0.1 
+      with:
+        command: run tests-codecov
+        
     - name: Upload Report
       uses: codecov/codecov-action@v1
       with:
