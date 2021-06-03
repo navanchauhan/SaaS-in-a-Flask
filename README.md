@@ -13,8 +13,9 @@ In the wise words of @alectrocute:
 	- [ ] Sign In
 	- [ ] OAuth2
 	- [ ] LDAP
-	- [ ] Forgot Password 
-- [ ] Form Handling
+	- [ ] Forgot Password
+	- [ ] Password Hashing 
+- [x] Form Handling
 - [ ] Dashboard
 - [ ] Admin Pages
 - [ ] Role Support
