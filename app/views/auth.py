@@ -42,12 +42,16 @@ def signin_user():
         flash_errors(form)
     return render_template("auth/signin.html",form=form) 
 
-@flask_login.login_required
 @app.route("/dashboard")
+@flask_login.login_required
 def user_dashboard():
     return render_template("dashboard.html",user=flask_login.current_user)
 
 @app.route('/logout')
 def logout():
     flask_login.logout_user()
-    return 'Logged out'
+    return render_template("message.html",message="You have been logged out.")
+
+@login_manager.unauthorized_handler
+def unauthorized():
+    return render_template("message.html",message="You need to be logged in to access this resource", code=401) 

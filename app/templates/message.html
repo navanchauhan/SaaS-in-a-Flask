@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}Message{% endblock %}
+{% block head %}
+    {{ super() }}
+{% endblock %}
+{% block content %}
+<section class="py-5 text-center container">
+        <div class="col-lg-6 col-md-8 mx-auto">
+            {% if code is defined %}
+        <h1 class="display-1">{{code}}</h1>
+            {% endif %}
+            <p class="lead text-muted">{{ message }}</p>
+        
+        <p>Click <a href={{url_for("index")}}>here</a> to go home.</p>
+    </div>
+</section>
+{% endblock %}
