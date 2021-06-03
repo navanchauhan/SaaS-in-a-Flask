@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block title %}Sign Up{% endblock %}
+
+{% block head %}
+    {{ super() }}
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+    <h1 class="display-2">Sign Up</h1>
+    <p>Register your account.</p>
+    <form method="POST">
+    {% include 'flash_messages.html' %}
+    {{ form.csrf_token }}
+    {% from "_formhelpers.html" import render_field %}
+    <div class="form-group">
+        <div class="row">
+            <div class="col">
+                 {{ render_field(form.first_name) }}
+            </div>
+            <div class="col">
+                 {{ render_field(form.last_name) }}
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+     {{ render_field(form.email) }}
+    </div>
+    <div class="form-group">
+     {{ render_field(form.password) }}
+    </div>
+    <div class="form-group">
+        <input class="btn btn-primary" type="submit" value="Submit">
+    </div>
+    </form>
+</div>
+{% endblock %}
