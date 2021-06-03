@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block title %}Contact Us{% endblock %}
+{% block head %}
+    {{ super() }}
+{% endblock %}
+{% block content %}
+    <div class="container">
+    <h1 class="display-2">Contact Us</h1>
+    <p>You can use this form to send us a message.</p>
+    <form method="POST" action="/ContactUs">
+    {% include 'flash_messages.html' %}
+    {{ form.csrf_token }}
+    <div class="form-group">
+    {{ form.name.label }} {{ form.name(class="form-control") }}
+    </div>
+    <div class="form-group">
+    {{ form.email.label }} {{ form.email(class="form-control") }}
+    </div>
+    <div class="form-group">
+    {{ form.subject.label }} {{ form.subject(class="form-control") }}
+    </div>
+    <div class="form-group">
+        {{form.body.label}} {{form.body(class="form-control")}}
+    </div>
+    <div class="form-group">
+        <input class="btn btn-primary" type="submit" value="Submit">
+    </div>
+    </form>
+</div>
+{% if form.name.errors %}
+    <ul class="errors">
+    {% for error in form.name %}
+        <li>{{ error }}</li>
+    {% endfor %}
+    </ul>
+{% endif %} 
+{% endblock %}
