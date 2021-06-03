@@ -21,4 +21,3 @@ python_version = "3.8"
 [scripts]
 tests = "python -m pytest"
 tests-codecov = "python -m pytest --cov=./ --cov-report=xml"
-make_requirements.txt = "pipenv lock --dev -r > requirements.txt"
