@@ -14,3 +14,7 @@ class UserSignUp(FlaskForm):
     last_name = StringField('Last Name')
     email = EmailField('Email',validators=[DataRequired(),Email()])
     password = PasswordField('Password',validators=[DataRequired()])
+
+class UserLogIn(FlaskForm):
+    email = EmailField('Email',validators=[DataRequired()])
+    password = PasswordField('Password',validators=[DataRequired()])
