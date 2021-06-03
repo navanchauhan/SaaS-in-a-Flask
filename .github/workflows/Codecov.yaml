@@ -1,0 +1,40 @@
+name: Codecov
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    strategy:
+      max-parallel: 4
+      matrix:
+        python-version: [3.8]
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v1
+      with:
+        python-version: ${{ matrix.python-version }}
+
+    - name: Install Dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install pipenv 
+        pipenv install --dev
+        pipenv install pytest-cov 
+        
+    - name: Generate Coverage Report
+      run: |
+        pipenv run pytest --cov=./ --cov-report=xml
+    - name: Upload Report
+      uses: codecov/codecov-action@v1
+      with:
+        token: ${{ secrets.CODECOV_TOKEN}}
+        flags: unittests
+        fail_ci_if_error: true
+        verbose: false
