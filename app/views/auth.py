@@ -54,4 +54,4 @@ def logout():
 
 @login_manager.unauthorized_handler
 def unauthorized():
-    return render_template("message.html",message="You need to be logged in to access this resource", code=401) 
+    return render_template("message.html",message="You need to be logged in to access this resource", code=401), 401 
