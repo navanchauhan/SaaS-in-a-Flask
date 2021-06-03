@@ -25,6 +25,7 @@ In the wise words of @alectrocute:
 	- [ ] Sentry Support
 	- [ ] Error Code Handling
 	- [ ] Custom Exceptions
+	- [x] 404,500,401 e.t.c
 - [ ] Async AJAX Calls 
 - [ ] Tests
 - [ ] Delayed Jobs
