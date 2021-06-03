@@ -1,7 +1,8 @@
 from app import app
 from app.forms.app_forms import MyForm
 from flask import render_template, flash
-
+from app.views import auth
+from app.misc_func import flash_errors
 theme = "original"
 
 @app.route("/")
@@ -16,11 +17,3 @@ def contact_us():
 		return "Wuhu"
 	flash_errors(form)
 	return render_template("contact.html",form=form)
-
-def flash_errors(form):
-    for field, errors in form.errors.items():
-        for error in errors:
-            flash(u"Error in the %s field - %s" % (
-                getattr(form, field).label.text,
-                error
-            ), 'danger')
