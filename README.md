@@ -6,7 +6,7 @@ In the wise words of @alectrocute:
 
 ## Features
 
-- [ ] Landing Page
+- [x] Landing Page
 - [ ] Database Management
 - Authentication
 	- [x] Sign Up
