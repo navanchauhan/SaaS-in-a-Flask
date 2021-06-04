@@ -21,7 +21,10 @@ def register_user():
         try:
             db.session.commit()
         except IntegrityError:
-            flash("Oops! An account with that email already exists") 
+            flash("Oops! An account with that email already exists")
+            return render_template("auth/signup.html",form=form)
+        flask_login.login_user(user)
+        return redirect(url_for("user_dashboard")) 
     flash_errors(form)
     return render_template("auth/signup.html",form=form)
 
