@@ -25,6 +25,9 @@ data2check_visitors = {
 	},
 	"/Simulate500":{
 	"code":500,"data":b"Server Could Not Process This."
+	},
+	"/admin/user/":{
+	"code":403,"data":b"Forbidden"
 	}
 }
 
