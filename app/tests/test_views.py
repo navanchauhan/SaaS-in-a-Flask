@@ -35,16 +35,6 @@ def test_visitors(app, client):
 		assert res.status_code == data2check_visitors[page]["code"]
 		assert data2check_visitors[page]["data"] in res.data 
 
-def test_forms(app,client):
-	res = client.post("/signin",data={"email":"123"})
-	assert b"This field is required." in res.data
-
-	res = client.post("/signup",data={"email":"123"})
-	assert b"This field is required." in res.data
-
-	res = client.post("/ContactUs",data={"email":123})
-	assert b"This field is required." in res.data
-
 def test_user_auth_flow(app, client):
 	res = client.post("/signup",data=dict(
 		email="test@example.com",
