@@ -14,6 +14,7 @@ flask-wtf = "*"
 email-validator = "*"
 flask-bcrypt = "*"
 flask-login = "*"
+flask-admin = "*"
 
 [requires]
 python_version = "3.8"
