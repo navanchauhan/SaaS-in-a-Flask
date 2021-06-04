@@ -55,14 +55,12 @@ make install
 
 ```
 make db
-
 ```
 
 #### Run Development Server
 
 ```
 make dev
-
 ```
 
 ### Running Tests
