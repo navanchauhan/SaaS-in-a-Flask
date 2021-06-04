@@ -24,7 +24,7 @@ In the wise words of @alectrocute:
 	- [x] Password Hashing 
 - [x] Form Handling
 - [x] Dashboard
-- [ ] GitHub Workflows
+- [x] GitHub Workflows
 - [ ] Admin Pages
 - [ ] Role Support
 - [ ] Team Management
