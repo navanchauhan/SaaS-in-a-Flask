@@ -34,10 +34,10 @@ class User(db.Model, UserMixin):
         return self.email
 
     def get_role(self):
-    	return self.roles
+    	return self.role
 
     def get_team(self):
-    	return self.get_team
+    	return self.team
 
     def is_paid(self):
         return self.paid
