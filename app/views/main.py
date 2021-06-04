@@ -1,7 +1,7 @@
 from app import app
 from app.forms.app_forms import MyForm
 from flask import render_template, flash
-from app.views import auth, error_pages
+from app.views import auth, error_pages, admin
 from app.misc_func import flash_errors
 theme = "original"
 
