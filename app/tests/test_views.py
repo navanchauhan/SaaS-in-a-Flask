@@ -31,3 +31,45 @@ def test_visitors(app, client):
 		print("Testing %s",page)
 		assert res.status_code == data2check_visitors[page]["code"]
 		assert data2check_visitors[page]["data"] in res.data 
+
+def test_user_auth_flow(app, client):
+	res = client.post("/signup",data=dict(
+		email="test@example.com",
+		first_name="John",
+		password="testpassword",
+		), follow_redirects=True)
+
+	assert res.status_code == 200
+	assert b"Hi John" in res.data
+	
+	res = client.get("/logout", follow_redirects=True)
+	assert res.status_code == 200
+	assert b"You have been logged out." in res.data
+
+	res = client.post("/signin",data=dict(
+		email="test@example.com",
+		password="testpassword"),
+		follow_redirects=True)
+	assert res.status_code == 200
+	assert b"Hi John" in res.data
+
+	res = client.get("/logout")
+	res = client.post("/signin",data=dict(
+		email="testtest@example.com",
+		password="123456"),follow_redirects=True)
+	assert res.status_code == 200
+	assert b"Incorrect Email" in res.data
+	res = client.post("/signin",data=dict(
+		email="test@example.com",
+		password="incorrectpassword"),
+		follow_redirects = True)
+	assert res.status_code == 200
+	assert b"Incorrect Password" in res.data	
+
+	res = client.post("/signup",data=dict(
+		email="test@example.com",
+		first_name="John",
+		password="testpassword",
+		), follow_redirects=True)
+	assert res.status_code == 200
+	assert b"Oops! An account with that email already exists" in res.data
