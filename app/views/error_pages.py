@@ -1,6 +1,10 @@
 from app import app
 from flask import render_template
 
+@app.route("/Simulate500")
+def simulate_500():
+	return 500
+
 @app.errorhandler(404)
 def page_not_found(e):
     return render_template('message.html',code=404,message="Whoops! Page Not Found"), 404
