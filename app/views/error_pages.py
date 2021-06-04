@@ -5,6 +5,10 @@ from flask import render_template
 def simulate_500():
 	return 500
 
+@app.errorhandler(403)
+def page_forbidden(e):
+	return render_template("message.html",code=403,message="Forbidden. You shall not pass"), 403
+
 @app.errorhandler(404)
 def page_not_found(e):
     return render_template('message.html',code=404,message="Whoops! Page Not Found"), 404

@@ -59,6 +59,9 @@ def test_user_auth_flow(app, client):
 	assert res.status_code == 200
 	assert b"Hi John" in res.data
 
+	res = client.get("/admin/user/")
+	assert res.status_code == 403 
+
 	res = client.get("/logout")
 	res = client.post("/signin",data=dict(
 		email="testtest@example.com",
