@@ -10,6 +10,7 @@
     <form method="POST" action="/ContactUs">
     {% include 'flash_messages.html' %}
     {{ form.csrf_token }}
+    {% from "_formhelpers.html" import render_field %}
     <div class="form-group">
     {{ form.name.label }} {{ form.name(class="form-control") }}
     </div>
@@ -27,11 +28,4 @@
     </div>
     </form>
 </div>
-{% if form.name.errors %}
-    <ul class="errors">
-    {% for error in form.name %}
-        <li>{{ error }}</li>
-    {% endfor %}
-    </ul>
-{% endif %} 
 {% endblock %}
