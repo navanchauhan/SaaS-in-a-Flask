@@ -22,7 +22,16 @@ def create_database():
 	db.create_all()
 @database_cli.command("delete")
 def delete_database():
-	db.drop_all()	
+	db.drop_all()
+@database_cli.command("admin-create")
+def make_superuser_database():
+	user = User(
+		first_name="Supersu",
+		email=app.config["ADMIN_EMAIL"],
+		password=app.config["ADMIN_PASSWORD"],
+		role="SUPERUSER")
+	db.session.add(user)
+	db.session.commit()	
 
 app.cli.add_command(database_cli)
 
