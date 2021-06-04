@@ -10,7 +10,7 @@ In the wise words of @alectrocute:
 ## Features
 
 - [x] **Landing Page:** Written in Bootstrap 5, compatible with [Bootswatch Themes](https://bootswatch.com)
-- [ ] Database Management
+- [x] **Database Management:** Using CLI or Superuser view
 - **Authentication:** Using Flask-Login 
 	- [x] Sign Up
 	- [x] Sign In
