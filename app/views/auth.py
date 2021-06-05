@@ -37,7 +37,9 @@ def signin_user():
     if form.validate_on_submit():
         user = models.User.query.filter_by(email=form.email.data).first()
         if user is not None:
-            if user.check_password(form.password.data):
+            if user.login_type != "Normie":
+                flash("Please Use Sign in With {}".format(user.login_type.title()))
+            elif user.check_password(form.password.data):
                 flask_login.login_user(user)
                 return redirect(url_for("user_dashboard"))
             else:
