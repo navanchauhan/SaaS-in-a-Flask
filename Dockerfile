@@ -13,7 +13,7 @@ RUN apt-get update \
     && apt-get install -y --no-install-recommends gcc and-build-dependencies \
     && rm -rf /var/lib/apt/lists/* \
     && pip install -r requirements.txt \
-    && apt-get purge -y --auto-remove gcc and-build-dependencies
+    && apt-get purge -y --auto-remove gcc
 
 COPY ./app ./app
 
