@@ -1,0 +1,11 @@
+flask
+flask-sqlalchemy
+flask-wtf
+email-validator
+flask-bcrypt
+flask-login
+flask-admin
+authlib
+fastapi
+uvicorn
+gunicorn
