@@ -9,3 +9,4 @@ authlib
 fastapi
 uvicorn
 gunicorn
+requests
