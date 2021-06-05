@@ -20,6 +20,7 @@ fastapi = "*"
 uvicorn = "*"
 gunicorn = "*"
 requests = "*"
+flask-mailman = "*"
 
 [requires]
 python_version = "3.8"
