@@ -2,6 +2,7 @@
 
 [![codecov](https://codecov.io/gh/navanchauhan/SaaS-in-a-Flask/branch/master/graph/badge.svg?token=ULbtVCRrrY)](https://codecov.io/gh/navanchauhan/SaaS-in-a-Flask)
 [![Flask Tests](https://github.com/navanchauhan/SaaS-in-a-Flask/actions/workflows/Flask-Tests.yaml/badge.svg)](https://github.com/navanchauhan/SaaS-in-a-Flask/actions/workflows/Flask-Tests.yaml)
+[![Deploy Using Heroku](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/navanchauhan/SaaS-in-a-Flask)
 
 In the wise words of @alectrocute:
 
@@ -33,11 +34,12 @@ In the wise words of @alectrocute:
 - [x] **Code Coverage:** Using CodeCov
 - [ ] Delayed Jobs
 - [ ] Logging
-- [ ] FastAPI Support
+- [x] FastAPI Support
 - Billing Handling
 	- [ ] Stripe
 - [ ] GDPR Compliance / Data Export
-- [ ] Docker Images
+- [x] Docker Images
+- [x] **Automatic Deployments:** Using Heroku [https://saas-in-a-flask.herokuapp.com](Sample Deployment)
 
 ## Quick How-Tos
 
