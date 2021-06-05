@@ -8,11 +8,11 @@ EXPOSE 5000
 
 WORKDIR /saas-in-a-flask
 
-COPY requirements.txt api.py ./
+COPY simple-requirements.txt api.py ./
 RUN apt-get update \
     && apt-get install -y --no-install-recommends gcc \
     && rm -rf /var/lib/apt/lists/* \
-    && pip install -r requirements.txt \
+    && pip install -r simple-requirements.txt \
     && apt-get purge -y --auto-remove gcc
 
 COPY ./app ./app
