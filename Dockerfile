@@ -12,6 +12,7 @@ COPY simple-requirements.txt api.py ./
 RUN apt-get update \
     && apt-get install -y --no-install-recommends gcc libssl-dev libffi-dev python3-dev build-essential \
     && rm -rf /var/lib/apt/lists/* \
+    && pip install --upgrade pip \
     && pip install -r simple-requirements.txt \
     && apt-get purge -y --auto-remove gcc libssl-dev libffi-dev python3-dev build-essential
 
