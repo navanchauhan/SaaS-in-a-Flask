@@ -31,3 +31,13 @@ cert-create:
 dev-ssl:
 	cd app && ln -sf config_dev.py config.py
 	FLASK_APP=app python -m flask run --reload --debugger --cert=cert.pem --key=key.pem 
+
+## Gunicorn Server with Uvicorn worker for FastAPI Support
+.PHONY: gunicorn
+gunicorn:
+	python -m gunicorn -w 1 api:app -k uvicorn.workers.UvicornWorker -b "0.0.0.0:8080" --reload
+
+## Uvicorn Server
+.PHONY: uvicorn
+uvicoen:
+	python -m uvicorn api:app --reload
