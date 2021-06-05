@@ -20,7 +20,7 @@ RUN apk add --no-cache --virtual .build-deps \
 	py-cffi \
 	python3-dev \
 	rust \
-	&& pip install -r requirements.txt \
+	&& pip install -r simple-requirements.txt \
 	&& find /usr/local \
         \( -type d -a -name test -o -name tests \) \
         -o \( -type f -a -name '*.pyc' -o -name '*.pyo' \) \
