@@ -13,6 +13,7 @@ class User(db.Model, UserMixin):
     paid = db.Column(db.Boolean)
     role = db.Column(db.String)
     team = db.Column(db.String)
+    login_type = db.Column(db.String ,default="Normie")
     _password = db.Column(db.String)
 
     @property
