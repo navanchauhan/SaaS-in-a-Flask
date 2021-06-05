@@ -5,12 +5,20 @@ from flask.cli import AppGroup
 from flask_sqlalchemy import SQLAlchemy
 import flask_login
 
+from authlib.integrations.flask_client import OAuth
+
 app = Flask(__name__)
 app.config.from_object('app.config')
 
 bcrypt = Bcrypt(app)
 db = SQLAlchemy(app)
 login_manager = flask_login.LoginManager()
+oauth = OAuth(app)
+
+oauth.register(
+	name="google",
+	server_metadata_url="https://accounts.google.com/.well-known/openid-configuration",
+	client_kwargs={"scope": "openid email profile"})
 
 login_manager.init_app(app)
 
