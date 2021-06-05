@@ -20,3 +20,14 @@ db:
 dev:
 	cd app && ln -sf config_dev.py config.py
 	FLASK_APP=app python -m flask run --reload --debugger --extra-files ./app/templates/base.html:./app/templates/contact.html:./app/templates/index.html	
+
+## Create Self-Signed SSL Certificate
+.PHONY: cert-create
+cert-create:
+	openssl req -x509 -newkey rsa:4096 -nodes -out cert.pem -keyout key.pem -days 365
+
+## Dev server with SSL
+.PHONY: dev-ssl
+dev-ssl:
+	cd app && ln -sf config_dev.py config.py
+	FLASK_APP=app python -m flask run --reload --debugger --cert=cert.pem --key=key.pem 
