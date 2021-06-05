@@ -16,6 +16,9 @@ flask-bcrypt = "*"
 flask-login = "*"
 flask-admin = "*"
 authlib = "*"
+fastapi = "*"
+uvicorn = "*"
+gunicorn = "*"
 
 [requires]
 python_version = "3.8"
