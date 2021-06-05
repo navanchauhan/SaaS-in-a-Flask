@@ -1,12 +1,14 @@
 from app import app, db, models, login_manager, oauth
 from app.forms.app_forms import UserSignUp, UserLogIn 
-from flask import render_template, flash,url_for, redirect
+from flask import render_template, flash,url_for, redirect, request
 from app.misc_func import flash_errors
 import flask_login
 from sqlalchemy.exc import IntegrityError
 
 @app.route("/signup", methods=['GET', 'POST'])
 def register_user():
+    if request.method == "GET" and flask_login.current_user.is_authenticated:
+            return redirect(url_for("user_dashboard"))
     form = UserSignUp()
     if form.validate_on_submit():
         user = models.User(
@@ -29,6 +31,8 @@ def register_user():
 
 @app.route("/signin", methods=['GET', 'POST'])
 def signin_user():
+    if request.method == "GET" and flask_login.current_user.is_authenticated:
+            return redirect(url_for("user_dashboard"))
     form = UserLogIn()
     if form.validate_on_submit():
         user = models.User.query.filter_by(email=form.email.data).first()

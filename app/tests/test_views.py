@@ -59,6 +59,14 @@ def test_user_auth_flow(app, client):
 	assert res.status_code == 200
 	assert b"Hi John" in res.data
 
+	res = client.get("/signin",follow_redirects=True)
+	assert res.status_code == 200
+	assert b"Hi John" in res.data
+
+	res = client.get("/signup",follow_redirects=True)
+	assert res.status_code == 200
+	assert b"Hi John" in res.data
+
 	res = client.get("/admin/user/")
 	assert res.status_code == 403 
 
