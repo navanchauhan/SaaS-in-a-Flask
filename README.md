@@ -14,7 +14,7 @@ In the wise words of @alectrocute:
 - **Authentication:** Using Flask-Login 
 	- [x] Sign Up
 	- [x] Sign In
-	- [ ] OAuth2
+	- [x] **OAuth2:** Using Authlib
 	- [ ] LDAP
 	- [ ] Forgot Password
 	- [ ] Confirm Email
@@ -27,9 +27,7 @@ In the wise words of @alectrocute:
 - [ ] Team Management
 - Error Handling
 	- [ ] Sentry Support
-	- [ ] Error Code Handling
-	- [ ] Custom Exceptions
-	- [x] 404,500,401 e.t.c
+	- [x] Error Code Handling
 - [ ] Async AJAX Calls 
 - [x] **Tests:** Using PyTest
 - [x] **Code Coverage:** Using CodeCov
