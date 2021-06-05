@@ -38,6 +38,6 @@ gunicorn:
 	python -m gunicorn -w 1 api:app -k uvicorn.workers.UvicornWorker -b "0.0.0.0:8080" --reload
 
 ## Uvicorn Server
-.PHONY: uvicorn
-uvicoen:
+.PHONY: uvicorn 
+uvicorn:
 	python -m uvicorn api:app --reload
