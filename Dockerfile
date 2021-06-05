@@ -9,7 +9,11 @@ EXPOSE 5000
 WORKDIR /saas-in-a-flask
 
 COPY requirements.txt api.py ./
-RUN pip install -r requirements.txt
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends gcc and-build-dependencies \
+    && rm -rf /var/lib/apt/lists/* \
+    && pip install -r requirements.txt \
+    && apt-get purge -y --auto-remove gcc and-build-dependencies
 
 COPY ./app ./app
 
