@@ -10,10 +10,10 @@ WORKDIR /saas-in-a-flask
 
 COPY simple-requirements.txt api.py ./
 RUN apt-get update \
-    && apt-get install -y --no-install-recommends gcc openssl-dev libffi-dev \
+    && apt-get install -y --no-install-recommends gcc libssl-dev libffi-dev \
     && rm -rf /var/lib/apt/lists/* \
     && pip install -r simple-requirements.txt \
-    && apt-get purge -y --auto-remove gcc openssl-dev libffi-dev
+    && apt-get purge -y --auto-remove gcc libssl-dev libffi-dev
 
 COPY ./app ./app
 
