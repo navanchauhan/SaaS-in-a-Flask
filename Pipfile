@@ -15,6 +15,7 @@ email-validator = "*"
 flask-bcrypt = "*"
 flask-login = "*"
 flask-admin = "*"
+authlib = "*"
 
 [requires]
 python_version = "3.8"
