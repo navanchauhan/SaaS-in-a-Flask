@@ -11,3 +11,4 @@ fastapi
 uvicorn
 gunicorn
 requests
+sentry-sdk[flask]
