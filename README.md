@@ -3,6 +3,7 @@
 [![codecov](https://codecov.io/gh/navanchauhan/SaaS-in-a-Flask/branch/master/graph/badge.svg?token=ULbtVCRrrY)](https://codecov.io/gh/navanchauhan/SaaS-in-a-Flask)
 [![Flask Tests](https://github.com/navanchauhan/SaaS-in-a-Flask/actions/workflows/Flask-Tests.yaml/badge.svg)](https://github.com/navanchauhan/SaaS-in-a-Flask/actions/workflows/Flask-Tests.yaml)
 [![Deploy Using Heroku](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/navanchauhan/SaaS-in-a-Flask)
+[![DeepSource](https://deepsource.io/gh/navanchauhan/SaaS-in-a-Flask.svg/?label=active+issues&token=cGLfebjxhVAjY3sdENfjDp66)](https://deepsource.io/gh/navanchauhan/SaaS-in-a-Flask/?ref=repository-badge)
 
 In the wise words of @alectrocute:
 
