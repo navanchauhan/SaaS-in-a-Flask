@@ -4,6 +4,7 @@ from flask_bcrypt import Bcrypt
 from flask.cli import AppGroup
 from flask_sqlalchemy import SQLAlchemy
 import flask_login
+from flask_mailman import Mail
 
 from authlib.integrations.flask_client import OAuth
 
@@ -14,6 +15,7 @@ bcrypt = Bcrypt(app)
 db = SQLAlchemy(app)
 login_manager = flask_login.LoginManager()
 oauth = OAuth(app)
+mail = Mail(app)
 
 oauth.register(
 	name="google",
@@ -38,6 +40,7 @@ def make_superuser_database():
 		email=app.config["ADMIN_EMAIL"],
 		password=app.config["ADMIN_PASSWORD"],
 		role="SUPERUSER")
+	user.confirmation = True
 	db.session.add(user)
 	db.session.commit()	
 
