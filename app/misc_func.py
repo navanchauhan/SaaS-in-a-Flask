@@ -24,4 +24,3 @@ def send(to, subject, body, body_html,thread=True):
 def send_async(app, message):
     with app.app_context():
         message.send()
-        print("Mail Sent")
