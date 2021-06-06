@@ -14,7 +14,7 @@ from authlib.integrations.flask_client import OAuth
 sentry_sdk.init(
     dsn=environ.get("SENTRY_DSN"),
     integrations=[FlaskIntegration()],
-    traces_sample_rate=1.0
+    traces_sample_rate=1.0,
 )
 
 app = Flask(__name__)
