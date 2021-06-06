@@ -9,7 +9,7 @@ from flask_admin.contrib.sqla import ModelView
 admin = Admin(app, name="Admin", template_mode="bootstrap4")
 
 
-class ModelView(ModelView): # skipcq: PYL-E0102
+class ModelView(ModelView):  # skipcq: PYL-E0102
     def is_accessible(self):
         try:
             if flask_login.current_user.get_role() == "SUPERUSER":
