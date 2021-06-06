@@ -1,9 +1,12 @@
 from app import app, db, models, login_manager, oauth
 from app.forms.app_forms import UserSignUp, UserLogIn 
 from flask import render_template, flash,url_for, redirect, request
-from app.misc_func import flash_errors
+from app.misc_func import flash_errors, send, send_async
 import flask_login
 from sqlalchemy.exc import IntegrityError
+from itsdangerous.url_safe import URLSafeSerializer
+
+ts = URLSafeSerializer(app.config["SECRET_KEY"])
 
 @app.route("/signup", methods=['GET', 'POST'])
 def register_user():
@@ -11,6 +14,7 @@ def register_user():
             return redirect(url_for("user_dashboard"))
     form = UserSignUp()
     if form.validate_on_submit():
+        form.email.data = form.email.data.lower()
         user = models.User(
             first_name=form.first_name.data,
             last_name=form.last_name.data,
@@ -24,8 +28,17 @@ def register_user():
         except IntegrityError:
             flash("Oops! An account with that email already exists")
             return render_template("auth/signup.html",form=form)
-        flask_login.login_user(user)
-        return redirect(url_for("user_dashboard")) 
+        
+        subject = "Confirm Your Email"
+        confirmation_token = ts.dumps(user.email,salt="email-confirm-key")
+        confirmation_url = url_for("confirm_email",confirmation_token=confirmation_token,_external=True)
+        body_html = render_template("misc/email_confirm.html",confirmation_url=confirmation_url)
+        body = render_template("misc/email_confirm.txt",confirmation_url=confirmation_url)
+        send(user.email, subject, body, body_html)
+        
+        flash("Please confirm your email before signing in..")
+        return redirect(url_for("signin_user"))
+
     flash_errors(form)
     return render_template("auth/signup.html",form=form)
 
@@ -35,13 +48,17 @@ def signin_user():
             return redirect(url_for("user_dashboard"))
     form = UserLogIn()
     if form.validate_on_submit():
+        form.email.data = form.email.data.lower()
         user = models.User.query.filter_by(email=form.email.data).first()
         if user is not None:
             if user.login_type != "Normie":
                 flash("Please Use Sign in With {}".format(user.login_type.title()))
             elif user.check_password(form.password.data):
-                flask_login.login_user(user)
-                return redirect(url_for("user_dashboard"))
+                if user.confirmation:
+                    flask_login.login_user(user)
+                    return redirect(url_for("user_dashboard"))
+                else:
+                    flash("Please Confirm Your Email First.")
             else:
                 flash("Incorrect Password")
         else:
@@ -65,7 +82,7 @@ def login_with_google_auth():
         user = models.User(
             first_name=g_user["given_name"],
             last_name=g_user["family_name"],
-            email=g_user["email"],
+            email=g_user["email"].lower(),
             confirmation=True,
             login_type="google")
         db.session.add(user)
@@ -87,6 +104,21 @@ def login_with_google_auth():
             "message.html",
             message="To use sign-in with Google, you need a verified e-mail.",
         )
+
+@app.route("/confirm", methods=["GET","POST"])
+def confirm_email():
+    confirmation_token = request.args.get("confirmation_token")
+    try:
+        email = ts.loads(confirmation_token, salt="email-confirm-key",max_age=86400)
+    except TypeError:
+        return render_template("message.html",message="Expired or Invalid Token")
+
+    user = models.User.query.filter_by(email=email).first()
+    print(email)
+    user.confirmation = True
+    db.session.commit()
+    flash("Email Has Been Succesfully Verified, You May Log In")
+    return redirect(url_for("signin_user"))
 
 @app.route("/dashboard")
 @flask_login.login_required
