@@ -1,3 +1,4 @@
+import sentry_sdk
 import click
 from flask import Flask
 from flask_bcrypt import Bcrypt
@@ -5,8 +6,16 @@ from flask.cli import AppGroup
 from flask_sqlalchemy import SQLAlchemy
 import flask_login
 from flask_mailman import Mail
+from sentry_sdk.integrations.flask import FlaskIntegration
+from os import environ
 
 from authlib.integrations.flask_client import OAuth
+
+sentry_sdk.init(
+    dsn=environ.get("SENTRY_DSN"),
+    integrations=[FlaskIntegration()],
+    traces_sample_rate=1.0
+)
 
 app = Flask(__name__)
 app.config.from_object("app.config")
