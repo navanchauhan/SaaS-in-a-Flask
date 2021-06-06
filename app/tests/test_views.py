@@ -32,6 +32,12 @@ data2check_visitors = {
 	},
 	"/admin/user/":{
 	"code":403,"data":b"Forbidden"
+	},
+	"/confirm":{
+	"code":200,"data":b"Token not provided in URL Parameter"
+	},
+	"/confirm?confirmation_token=123":{
+	"code":200,"data":b"Bad Token Provided"
 	}
 }
 
@@ -51,6 +57,13 @@ def test_user_auth_flow(app, client):
 
 	assert res.status_code == 200
 	assert b"confirm your email" in res.data
+
+	res = client.post("/signin",data=dict(
+		email="test@example.com",
+		password="testpassword"),
+		follow_redirects=True)
+	assert res.status_code == 200
+	assert b"Please Confirm Your Email First." in res.data
 
 	confirmation_token = ts.dumps("test@example.com",salt="email-confirm-key")
 	res = client.get("/confirm?confirmation_token={}".format(confirmation_token),

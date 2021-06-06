@@ -5,6 +5,7 @@ from app.misc_func import flash_errors, send, send_async
 import flask_login
 from sqlalchemy.exc import IntegrityError
 from itsdangerous.url_safe import URLSafeSerializer
+from itsdangerous.exc import BadSignature
 
 ts = URLSafeSerializer(app.config["SECRET_KEY"])
 
@@ -111,8 +112,9 @@ def confirm_email():
     try:
         email = ts.loads(confirmation_token, salt="email-confirm-key",max_age=86400)
     except TypeError:
-        return render_template("message.html",message="Expired or Invalid Token")
-
+        return render_template("message.html",message="Token not provided in URL Parameter")
+    except BadSignature:
+        return render_template("message.html",message="Bad Token Provided")
     user = models.User.query.filter_by(email=email).first()
     print(email)
     user.confirmation = True
