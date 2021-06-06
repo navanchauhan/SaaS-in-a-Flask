@@ -66,8 +66,7 @@ def signin_user():
                 if user.confirmation:
                     flask_login.login_user(user)
                     return redirect(url_for("user_dashboard"))
-                else:
-                    flash("Please Confirm Your Email First.")
+                flash("Please Confirm Your Email First.")
             else:
                 flash("Incorrect Password")
         else:
@@ -107,11 +106,10 @@ def login_with_google_auth():
             if user.login_type == "google":
                 flask_login.login_user(user)
                 return redirect(url_for("user_dashboard"))
-            else:
-                flash(
-                    "An account already exists for this email. Please use your password to log in."
-                )
-                return redirect(url_for("signin_user"))
+            flash(
+                "An account already exists for this email. Please use your password to log in."
+            )
+            return redirect(url_for("signin_user"))
     else:
         return render_template(
             "message.html",
