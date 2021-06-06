@@ -18,7 +18,7 @@ In the wise words of @alectrocute:
 	- [x] **OAuth2:** Using Authlib
 	- [ ] LDAP
 	- [ ] Forgot Password
-	- [ ] Confirm Email
+	- [x] Confirm Email
 	- [x] **Password Hashing:** Using Bcrypt (Flask-Bcrypt)
 - [x] **Form Handling:** With Flask-WTF using WTForms
 - [x] Dashboard
