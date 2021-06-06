@@ -28,7 +28,7 @@ In the wise words of @alectrocute:
 - [ ] Role Support
 - [ ] Team Management
 - Error Handling
-	- [ ] Sentry Support
+	- [x] Sentry Support
 	- [x] Error Code Handling
 - [ ] Async AJAX Calls 
 - [x] **Tests:** Using PyTest
