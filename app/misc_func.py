@@ -25,6 +25,6 @@ def send(to, subject, body, body_html):
     thr.start()
 
 
-def send_async(app, message): # skipcq: PYL-W0621
+def send_async(app, message):  # skipcq: PYL-W0621
     with app.app_context():
         message.send()
