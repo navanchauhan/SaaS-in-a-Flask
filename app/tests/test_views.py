@@ -1,3 +1,7 @@
+from itsdangerous.url_safe import URLSafeSerializer
+from app import app as flask_app
+ts = URLSafeSerializer(flask_app.config["SECRET_KEY"])
+
 data2check_visitors = {
 	"/index": {
 	"code": 200, "data": b"Nice Tagline"
@@ -46,8 +50,21 @@ def test_user_auth_flow(app, client):
 		), follow_redirects=True)
 
 	assert res.status_code == 200
+	assert b"confirm your email" in res.data
+
+	confirmation_token = ts.dumps("test@example.com",salt="email-confirm-key")
+	res = client.get("/confirm?confirmation_token={}".format(confirmation_token),
+		follow_redirects=True)
+	print(res.data)
+	assert b"Succesfully Verified" in res.data	
+
+	res = client.post("/signin",data=dict(
+		email="test@example.com",
+		password="testpassword"),
+		follow_redirects=True)
+	assert res.status_code == 200
 	assert b"Hi John" in res.data
-	
+
 	res = client.get("/logout", follow_redirects=True)
 	assert res.status_code == 200
 	assert b"You have been logged out." in res.data
