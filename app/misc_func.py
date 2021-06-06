@@ -17,7 +17,7 @@ def flash_errors(form):
 # Sauce: https://github.com/alectrocute/flaskSaaS/blob/master/app/toolbox/email.py
 
 
-def send(to, subject, body, body_html, thread=True):
+def send(to, subject, body, body_html):
     sender = app.config["MAIL_FROM"]
     message = EmailMultiAlternatives(subject, body, sender, [to])
     message.attach_alternative(body_html, "text/html")
