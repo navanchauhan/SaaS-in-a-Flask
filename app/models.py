@@ -3,8 +3,9 @@ from flask_login import UserMixin
 
 from app import bcrypt, db
 
+
 class User(db.Model, UserMixin):
-    __tablename__ = 'users'
+    __tablename__ = "users"
 
     first_name = db.Column(db.String)
     last_name = db.Column(db.String)
@@ -13,12 +14,12 @@ class User(db.Model, UserMixin):
     paid = db.Column(db.Boolean)
     role = db.Column(db.String)
     team = db.Column(db.String)
-    login_type = db.Column(db.String ,default="Normie")
+    login_type = db.Column(db.String, default="Normie")
     _password = db.Column(db.String)
 
     @property
     def full_name(self):
-        return '{} {}'.format(self.first_name, self.last_name)
+        return "{} {}".format(self.first_name, self.last_name)
 
     @hybrid_property
     def password(self):
@@ -35,10 +36,10 @@ class User(db.Model, UserMixin):
         return self.email
 
     def get_role(self):
-    	return self.role
+        return self.role
 
     def get_team(self):
-    	return self.team
+        return self.team
 
     def is_paid(self):
         return self.paid
