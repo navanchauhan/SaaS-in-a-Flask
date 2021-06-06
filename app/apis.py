@@ -1,5 +1,5 @@
-from api import app
 from app import models
+from api import app
 from fastapi import Body, FastAPI, HTTPException
 from fastapi.middleware.wsgi import WSGIMiddleware
 from pydantic import BaseModel
