@@ -1,3 +1,7 @@
+# -*- coding: utf-8 -*-
+"""
+Configuration with basic fixtures
+"""
 import pytest
 
 from app import app as flask_app
@@ -8,6 +12,11 @@ import os
 
 @pytest.fixture
 def app():
+    """
+    Special configurations for tests
+
+    We use a dummy database and initialise it.
+    """
     flask_app.config["WTF_CSRF_ENABLED"] = False
     flask_app.config["SQLALCHEMY_DATABASE_URI"] = (
         "sqlite:///" + tempfile.mkstemp(suffix=".db")[-1]

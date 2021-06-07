@@ -1,7 +1,14 @@
+# -*- coding: utf-8 -*-
+"""
+Test(s) for Flask Views
+"""
 from itsdangerous.url_safe import URLSafeSerializer
 from app import app as flask_app
 
 ts = URLSafeSerializer(flask_app.config["SECRET_KEY"])
+"""
+To create confirmation tokens
+"""
 
 data2check_visitors = {
     "/index": {"code": 200, "data": b"Nice Tagline"},
@@ -20,9 +27,15 @@ data2check_visitors = {
     "/confirm": {"code": 200, "data": b"Token not provided in URL Parameter"},
     "/confirm?confirmation_token=123": {"code": 200, "data": b"Bad Token Provided"},
 }
+"""
+Dictionary of Path, Expected Status Code and Data to Test for Visitors
+"""
 
 
 def test_visitors(app, client):
+    """
+    Test if Vistors get expected endpoints and status codes
+    """
     for page in data2check_visitors:
         res = client.get(page)
         print("Testing %s", page)
@@ -31,6 +44,11 @@ def test_visitors(app, client):
 
 
 def test_user_auth_flow(app, client):
+    """
+    Test User Authentication Flow
+
+    Tests Registeration, Email-Confirmation and Log-in along with appropriate redirects.
+    """
     res = client.post(
         "/signup",
         data=dict(
