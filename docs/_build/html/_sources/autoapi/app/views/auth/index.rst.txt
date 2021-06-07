@@ -1,0 +1,63 @@
+:mod:`app.views.auth`
+=====================
+
+.. py:module:: app.views.auth
+
+
+Module Contents
+---------------
+
+
+Functions
+~~~~~~~~~
+
+.. autoapisummary::
+
+   app.views.auth.register_user
+   app.views.auth.signin_user
+   app.views.auth.login_with_google
+   app.views.auth.login_with_google_auth
+   app.views.auth.confirm_email
+   app.views.auth.user_dashboard
+   app.views.auth.logout
+   app.views.auth.unauthorized
+
+
+
+Attributes
+~~~~~~~~~~
+
+.. autoapisummary::
+
+   app.views.auth.ts
+
+
+.. data:: ts
+   
+
+   
+
+.. function:: register_user()
+
+
+.. function:: signin_user()
+
+
+.. function:: login_with_google()
+
+
+.. function:: login_with_google_auth()
+
+
+.. function:: confirm_email()
+
+
+.. function:: user_dashboard()
+
+
+.. function:: logout()
+
+
+.. function:: unauthorized()
+
+

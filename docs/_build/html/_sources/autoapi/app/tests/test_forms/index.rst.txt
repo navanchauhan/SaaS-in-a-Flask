@@ -1,0 +1,37 @@
+:mod:`app.tests.test_forms`
+===========================
+
+.. py:module:: app.tests.test_forms
+
+.. autoapi-nested-parse::
+
+   Test(s) for Forms
+
+   Tests the forms and their validations
+
+
+
+Module Contents
+---------------
+
+
+Functions
+~~~~~~~~~
+
+.. autoapisummary::
+
+   app.tests.test_forms.test_incorrect_forms
+   app.tests.test_forms.test_contactus
+
+
+
+.. function:: test_incorrect_forms(app, client)
+
+   Simulate Invalid Forms
+
+
+.. function:: test_contactus(app, client)
+
+   Test Valid Form Submission
+
+

@@ -1,0 +1,99 @@
+:mod:`app.models`
+=================
+
+.. py:module:: app.models
+
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. autoapisummary::
+
+   app.models.User
+
+
+
+
+.. class:: User
+
+   Bases: :py:obj:`app.db.Model`, :py:obj:`flask_login.UserMixin`
+
+   This provides default implementations for the methods that Flask-Login
+   expects user objects to have.
+
+   .. attribute:: __tablename__
+      :annotation: = users
+
+      
+
+   .. attribute:: first_name
+      
+
+      
+
+   .. attribute:: last_name
+      
+
+      
+
+   .. attribute:: email
+      
+
+      
+
+   .. attribute:: confirmation
+      
+
+      
+
+   .. attribute:: paid
+      
+
+      
+
+   .. attribute:: role
+      
+
+      
+
+   .. attribute:: team
+      
+
+      
+
+   .. attribute:: login_type
+      
+
+      
+
+   .. attribute:: _password
+      
+
+      
+
+   .. method:: full_name(self)
+      :property:
+
+
+   .. method:: password(self)
+
+
+   .. method:: check_password(self, plaintext)
+
+
+   .. method:: get_id(self)
+
+
+   .. method:: get_role(self)
+
+
+   .. method:: get_team(self)
+
+
+   .. method:: is_paid(self)
+
+
+

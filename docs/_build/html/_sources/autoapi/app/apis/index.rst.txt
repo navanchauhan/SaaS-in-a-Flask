@@ -1,0 +1,28 @@
+:mod:`app.apis`
+===============
+
+.. py:module:: app.apis
+
+
+Module Contents
+---------------
+
+
+Functions
+~~~~~~~~~
+
+.. autoapisummary::
+
+   app.apis.API_Version
+   app.apis.API_User_Details
+
+
+
+.. function:: API_Version()
+   :async:
+
+
+.. function:: API_User_Details(email: str)
+   :async:
+
+

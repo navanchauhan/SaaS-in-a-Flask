@@ -1,0 +1,30 @@
+:mod:`app.misc_func`
+====================
+
+.. py:module:: app.misc_func
+
+
+Module Contents
+---------------
+
+
+Functions
+~~~~~~~~~
+
+.. autoapisummary::
+
+   app.misc_func.flash_errors
+   app.misc_func.send
+   app.misc_func.send_async
+
+
+
+.. function:: flash_errors(form)
+
+
+.. function:: send(to, subject, body, body_html)
+
+
+.. function:: send_async(app, message)
+
+

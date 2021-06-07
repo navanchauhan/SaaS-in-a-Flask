@@ -1,0 +1,26 @@
+:mod:`app.tests`
+================
+
+.. py:module:: app.tests
+
+.. autoapi-nested-parse::
+
+   PyTest Modules for Unit Testing
+
+
+
+Submodules
+----------
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+
+   conftest/index.rst
+   test_admin/index.rst
+   test_cli/index.rst
+   test_fastapi/index.rst
+   test_forms/index.rst
+   test_models/index.rst
+   test_views/index.rst
+
+

@@ -1,0 +1,55 @@
+:mod:`app.views.admin`
+======================
+
+.. py:module:: app.views.admin
+
+.. autoapi-nested-parse::
+
+   SuperUser/Admin portal using flask-admin
+
+
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. autoapisummary::
+
+   app.views.admin.ModelView
+
+
+
+
+Attributes
+~~~~~~~~~~
+
+.. autoapisummary::
+
+   app.views.admin.admin
+
+
+.. data:: admin
+   
+
+   Initialised Admin Portal
+
+
+.. class:: ModelView(model, session, name=None, category=None, endpoint=None, url=None, static_folder=None, menu_class_name=None, menu_icon_type=None, menu_icon_value=None)
+
+
+   Bases: :py:obj:`flask_admin.contrib.sqla.ModelView`
+
+   Our extended ModelView Class
+
+   Refer to Flask-Admin Docs for more details
+
+   https://flask-admin.readthedocs.io/en/latest/introduction/?highlight=ModelView#modelview-configuration-attributes
+
+   .. method:: is_accessible(self)
+
+      This function checks if a user should be given access or not
+
+
+

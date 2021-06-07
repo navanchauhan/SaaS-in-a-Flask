@@ -1,0 +1,29 @@
+:mod:`app.tests.test_models`
+============================
+
+.. py:module:: app.tests.test_models
+
+.. autoapi-nested-parse::
+
+   Test(s) for Database Models
+
+
+
+Module Contents
+---------------
+
+
+Functions
+~~~~~~~~~
+
+.. autoapisummary::
+
+   app.tests.test_models.test_usermodel
+
+
+
+.. function:: test_usermodel(app, client)
+
+   Test User Model
+
+

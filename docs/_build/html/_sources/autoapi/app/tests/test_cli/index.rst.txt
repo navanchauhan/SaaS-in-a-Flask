@@ -1,0 +1,31 @@
+:mod:`app.tests.test_cli`
+=========================
+
+.. py:module:: app.tests.test_cli
+
+.. autoapi-nested-parse::
+
+   Test(s) for CLI Commands
+
+
+
+Module Contents
+---------------
+
+
+Functions
+~~~~~~~~~
+
+.. autoapisummary::
+
+   app.tests.test_cli.test_database_commands
+
+
+
+.. function:: test_database_commands(app, client)
+
+   Test for Database CLI Commands
+
+   Test for initialisation, creation and admin user creation.
+
+

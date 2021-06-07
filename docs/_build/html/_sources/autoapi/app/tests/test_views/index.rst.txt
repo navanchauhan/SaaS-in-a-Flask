@@ -1,0 +1,58 @@
+:mod:`app.tests.test_views`
+===========================
+
+.. py:module:: app.tests.test_views
+
+.. autoapi-nested-parse::
+
+   Test(s) for Flask Views
+
+
+
+Module Contents
+---------------
+
+
+Functions
+~~~~~~~~~
+
+.. autoapisummary::
+
+   app.tests.test_views.test_visitors
+   app.tests.test_views.test_user_auth_flow
+
+
+
+Attributes
+~~~~~~~~~~
+
+.. autoapisummary::
+
+   app.tests.test_views.ts
+   app.tests.test_views.data2check_visitors
+
+
+.. data:: ts
+   
+
+   To create confirmation tokens
+
+
+.. data:: data2check_visitors
+   
+
+   Dictionary of Path, Expected Status Code and Data to Test for Visitors
+
+
+.. function:: test_visitors(app, client)
+
+   Test if Vistors get expected endpoints and status codes
+
+
+.. function:: test_user_auth_flow(app, client)
+
+   Test User Authentication Flow
+
+   Tests Registeration, Email-Confirmation and Log-in along with appropriate redirects.
+
+

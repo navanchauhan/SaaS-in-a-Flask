@@ -1,0 +1,107 @@
+:mod:`app`
+==========
+
+.. py:module:: app
+
+
+Subpackages
+-----------
+.. toctree::
+   :titlesonly:
+   :maxdepth: 3
+
+   forms/index.rst
+   tests/index.rst
+   views/index.rst
+
+
+Submodules
+----------
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+
+   apis/index.rst
+   config/index.rst
+   config_dev/index.rst
+   misc_func/index.rst
+   models/index.rst
+
+
+Package Contents
+----------------
+
+
+Functions
+~~~~~~~~~
+
+.. autoapisummary::
+
+   app.create_database
+   app.delete_database
+   app.make_superuser_database
+   app.load_user
+
+
+
+Attributes
+~~~~~~~~~~
+
+.. autoapisummary::
+
+   app.app
+   app.bcrypt
+   app.db
+   app.login_manager
+   app.oauth
+   app.mail
+   app.database_cli
+
+
+.. data:: app
+   
+
+   
+
+.. data:: bcrypt
+   
+
+   
+
+.. data:: db
+   
+
+   
+
+.. data:: login_manager
+   
+
+   
+
+.. data:: oauth
+   
+
+   
+
+.. data:: mail
+   
+
+   
+
+.. data:: database_cli
+   
+
+   
+
+.. function:: create_database()
+
+
+.. function:: delete_database()
+
+
+.. function:: make_superuser_database()
+
+
+.. function:: load_user(email)
+
+

@@ -1,0 +1,47 @@
+:mod:`app.views.error_pages`
+============================
+
+.. py:module:: app.views.error_pages
+
+.. autoapi-nested-parse::
+
+   This file describes the errors and the message the user should see.
+
+
+
+Module Contents
+---------------
+
+
+Functions
+~~~~~~~~~
+
+.. autoapisummary::
+
+   app.views.error_pages.simulate_500
+   app.views.error_pages.page_forbidden
+   app.views.error_pages.page_not_found
+   app.views.error_pages.page_server_error
+
+
+
+.. function:: simulate_500()
+
+   Used to simulate a error 500 for test coverage of 500 handling
+
+
+.. function:: page_forbidden(e)
+
+   Thrown when a user accesses a page with @flask_login.login_required
+
+
+.. function:: page_not_found(e)
+
+   Page for resource or file nout found
+
+
+.. function:: page_server_error(e)
+
+   Page for internal server error
+
+

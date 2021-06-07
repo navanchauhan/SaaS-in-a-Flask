@@ -1,0 +1,79 @@
+:mod:`app.config`
+=================
+
+.. py:module:: app.config
+
+
+Module Contents
+---------------
+
+.. data:: SQLALCHEMY_DATABASE_URI
+   :annotation: = sqlite:////tmp/test.db
+
+   
+
+.. data:: SQLALCHEMY_TRACK_MODIFICATIONS
+   :annotation: = False
+
+   
+
+.. data:: SECRET_KEY
+   :annotation: = tchtchtch
+
+   
+
+.. data:: ADMIN_EMAIL
+   :annotation: = admin@example.com
+
+   
+
+.. data:: ADMIN_PASSWORD
+   :annotation: = iamgroot
+
+   
+
+.. data:: GOOGLE_CLIENT_ID
+   
+
+   
+
+.. data:: GOOGLE_CLIENT_SECRET
+   
+
+   
+
+.. data:: MAIL_BACKEND
+   :annotation: = smtp
+
+   
+
+.. data:: MAIL_SERVER
+   
+
+   
+
+.. data:: MAIL_PORT
+   
+
+   
+
+.. data:: MAIL_USERNAME
+   
+
+   
+
+.. data:: MAIL_PASSWORD
+   
+
+   
+
+.. data:: MAIL_FROM
+   
+
+   
+
+.. data:: MAIL_USE_TLS
+   
+
+   
+

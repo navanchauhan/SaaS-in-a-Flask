@@ -1,0 +1,15 @@
+:mod:`app.forms`
+================
+
+.. py:module:: app.forms
+
+
+Submodules
+----------
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+
+   app_forms/index.rst
+
+

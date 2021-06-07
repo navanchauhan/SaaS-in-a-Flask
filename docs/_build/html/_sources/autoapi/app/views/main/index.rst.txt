@@ -1,0 +1,39 @@
+:mod:`app.views.main`
+=====================
+
+.. py:module:: app.views.main
+
+.. autoapi-nested-parse::
+
+   This is the main views module.
+
+   You should import all other views into this file rather than individually importing in __init__.py
+
+
+
+Module Contents
+---------------
+
+
+Functions
+~~~~~~~~~
+
+.. autoapisummary::
+
+   app.views.main.index
+   app.views.main.contact_us
+
+
+
+.. function:: index()
+
+   The view for the landing page.
+
+
+.. function:: contact_us()
+
+   A simple contact us form with basic validation.
+
+   This dummy form has not been linked to any database.
+
+

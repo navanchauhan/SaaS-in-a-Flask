@@ -1,0 +1,18 @@
+:mod:`app.views`
+================
+
+.. py:module:: app.views
+
+
+Submodules
+----------
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+
+   admin/index.rst
+   auth/index.rst
+   error_pages/index.rst
+   main/index.rst
+
+

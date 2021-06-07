@@ -1,0 +1,35 @@
+:mod:`app.tests.conftest`
+=========================
+
+.. py:module:: app.tests.conftest
+
+.. autoapi-nested-parse::
+
+   Configuration with basic fixtures
+
+
+
+Module Contents
+---------------
+
+
+Functions
+~~~~~~~~~
+
+.. autoapisummary::
+
+   app.tests.conftest.app
+   app.tests.conftest.client
+
+
+
+.. function:: app()
+
+   Special configurations for tests
+
+   We use a dummy database and initialise it.
+
+
+.. function:: client(app)
+
+

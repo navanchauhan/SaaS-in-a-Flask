@@ -1,0 +1,107 @@
+:mod:`app.forms.app_forms`
+==========================
+
+.. py:module:: app.forms.app_forms
+
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. autoapisummary::
+
+   app.forms.app_forms.MyForm
+   app.forms.app_forms.UserSignUp
+   app.forms.app_forms.UserLogIn
+
+
+
+
+.. class:: MyForm(formdata=_Auto, **kwargs)
+
+
+   Bases: :py:obj:`flask_wtf.FlaskForm`
+
+   Flask-specific subclass of WTForms :class:`~wtforms.form.Form`.
+
+   If ``formdata`` is not specified, this will use :attr:`flask.request.form`
+   and :attr:`flask.request.files`.  Explicitly pass ``formdata=None`` to
+   prevent this.
+
+   .. attribute:: name
+      
+
+      
+
+   .. attribute:: email
+      
+
+      
+
+   .. attribute:: subject
+      
+
+      
+
+   .. attribute:: body
+      
+
+      
+
+
+.. class:: UserSignUp(formdata=_Auto, **kwargs)
+
+
+   Bases: :py:obj:`flask_wtf.FlaskForm`
+
+   Flask-specific subclass of WTForms :class:`~wtforms.form.Form`.
+
+   If ``formdata`` is not specified, this will use :attr:`flask.request.form`
+   and :attr:`flask.request.files`.  Explicitly pass ``formdata=None`` to
+   prevent this.
+
+   .. attribute:: first_name
+      
+
+      
+
+   .. attribute:: last_name
+      
+
+      
+
+   .. attribute:: email
+      
+
+      
+
+   .. attribute:: password
+      
+
+      
+
+
+.. class:: UserLogIn(formdata=_Auto, **kwargs)
+
+
+   Bases: :py:obj:`flask_wtf.FlaskForm`
+
+   Flask-specific subclass of WTForms :class:`~wtforms.form.Form`.
+
+   If ``formdata`` is not specified, this will use :attr:`flask.request.form`
+   and :attr:`flask.request.files`.  Explicitly pass ``formdata=None`` to
+   prevent this.
+
+   .. attribute:: email
+      
+
+      
+
+   .. attribute:: password
+      
+
+      
+
+

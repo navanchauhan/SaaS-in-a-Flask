@@ -1,0 +1,52 @@
+:mod:`app.tests.test_fastapi`
+=============================
+
+.. py:module:: app.tests.test_fastapi
+
+.. autoapi-nested-parse::
+
+   Test(s) for FastAPI Inegration
+
+
+
+Module Contents
+---------------
+
+
+Functions
+~~~~~~~~~
+
+.. autoapisummary::
+
+   app.tests.test_fastapi.test_fastapi
+   app.tests.test_fastapi.test_fastapi_user_details
+
+
+
+Attributes
+~~~~~~~~~~
+
+.. autoapisummary::
+
+   app.tests.test_fastapi.fastapi_client
+
+
+.. data:: fastapi_client
+   
+
+   
+
+.. function:: test_fastapi(app, client)
+
+   Basic Version Test
+
+   Check if endpoint is accessible
+
+
+.. function:: test_fastapi_user_details(app, client)
+
+   Basic User Test
+
+   Check if DB is accessible to the FastAPI App
+
+

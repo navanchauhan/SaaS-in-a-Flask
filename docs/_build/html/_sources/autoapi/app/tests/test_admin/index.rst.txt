@@ -1,0 +1,32 @@
+:mod:`app.tests.test_admin`
+===========================
+
+.. py:module:: app.tests.test_admin
+
+.. autoapi-nested-parse::
+
+   Test(s) for Admin Portal
+
+
+
+Module Contents
+---------------
+
+
+Functions
+~~~~~~~~~
+
+.. autoapisummary::
+
+   app.tests.test_admin.test_admin
+
+
+
+.. function:: test_admin(app, client)
+
+   Test Admin Portal
+
+   We use the cli-runner to run the admin-create command.
+   Then we check if the admin portal is accessible to the newly created superuser.
+
+
