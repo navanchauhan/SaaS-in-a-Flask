@@ -4,6 +4,8 @@ Test(s) for Forms
 
 Tests the forms and their validations
 """
+
+
 def test_incorrect_forms(app, client):
     """
     Simulate Invalid Forms
@@ -19,7 +21,7 @@ def test_incorrect_forms(app, client):
 
 
 def test_contactus(app, client):
-    """Test Valid Form Submission""" 
+    """Test Valid Form Submission"""
     res = client.post(
         "/ContactUs",
         data={

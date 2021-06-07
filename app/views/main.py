@@ -11,6 +11,7 @@ from flask import render_template, flash
 from app.views import auth, error_pages, admin
 from app.misc_func import flash_errors
 
+
 @app.route("/")
 @app.route("/index")
 def index():

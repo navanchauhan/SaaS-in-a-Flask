@@ -15,6 +15,7 @@ admin = Admin(app, name="Admin", template_mode="bootstrap4")
 Initialised Admin Portal
 """
 
+
 class ModelView(ModelView):  # skipcq: PYL-E0102
     """
     Our extended ModelView Class
@@ -23,6 +24,7 @@ class ModelView(ModelView):  # skipcq: PYL-E0102
 
     https://flask-admin.readthedocs.io/en/latest/introduction/?highlight=ModelView#modelview-configuration-attributes
     """
+
     def is_accessible(self):
         """This function checks if a user should be given access or not"""
         try:
