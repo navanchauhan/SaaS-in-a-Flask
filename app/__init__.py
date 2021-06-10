@@ -4,6 +4,7 @@ from flask import Flask
 from flask_bcrypt import Bcrypt
 from flask.cli import AppGroup
 from flask_sqlalchemy import SQLAlchemy
+from flask_migrate import Migrate
 import flask_login
 from flask_mailman import Mail
 from sentry_sdk.integrations.flask import FlaskIntegration
@@ -22,6 +23,7 @@ app.config.from_object("app.config")
 
 bcrypt = Bcrypt(app)
 db = SQLAlchemy(app)
+migrate = Migrate(app, db)
 login_manager = flask_login.LoginManager()
 oauth = OAuth(app)
 mail = Mail(app)
