@@ -13,6 +13,7 @@ In the wise words of @alectrocute:
 
 - [x] **Landing Page:** Written in Bootstrap 5, compatible with [Bootswatch Themes](https://bootswatch.com)
 - [x] **Database Management:** Using CLI or Superuser view
+	- [x] **Migration:** Using Flask-Migrate
 - **Authentication:** Using Flask-Login 
 	- [x] Sign Up
 	- [x] Sign In
