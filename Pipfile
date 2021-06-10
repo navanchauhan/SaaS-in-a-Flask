@@ -22,6 +22,8 @@ gunicorn = "*"
 requests = "*"
 flask-mailman = "*"
 sentry-sdk = "*"
+flask-migrate = "*"
+blinker = "*"
 
 [requires]
 python_version = "3.8"
